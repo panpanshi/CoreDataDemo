@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="13533" systemVersion="" minimumToolsVersion="Automatic" sourceLanguage="Objective-C" userDefinedModelVersionIdentifier="">
+    <entity name="Clazz" representedClassName="Clazz" syncable="YES">
+        <attribute name="classId" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="clazzName" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="classStudents" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Student" inverseName="studentClass" inverseEntity="Student" syncable="YES"/>
+    </entity>
+    <entity name="Course" representedClassName="Course" syncable="YES">
+        <attribute name="chapterCount" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="courseId" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="courseName" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="courseStudents" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Student" inverseName="studentCourses" inverseEntity="Student" syncable="YES"/>
+    </entity>
+    <entity name="Person" representedClassName="Person" syncable="YES">
+        <attribute name="age" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="Student" representedClassName="Student" syncable="YES">
+        <attribute name="studentAge" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="studentId" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="studentName" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="studentClass" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Clazz" inverseName="classStudents" inverseEntity="Clazz" syncable="YES"/>
+        <relationship name="studentCourses" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Course" inverseName="courseStudents" inverseEntity="Course" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Person" positionX="7" positionY="-318" width="128" height="75"/>
+        <element name="Student" positionX="-162" positionY="-126" width="128" height="118"/>
+        <element name="Clazz" positionX="9" positionY="-117" width="153" height="88"/>
+        <element name="Course" positionX="-344" positionY="-114" width="128" height="103"/>
+    </elements>
+</model>
